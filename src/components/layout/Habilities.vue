@@ -17,7 +17,7 @@
                     <tbody>
                         <tr v-for="hab in habilities">
                             <td> {{ hab.language }} </td>
-                            <td> {{ hab.nivel }}</td>
+                            <td> {{ get_hab(hab.nivel) }}</td>
                             <td> 
                                 <span v-for="f in hab.framework"> 
                                     {{ f }} 
@@ -38,6 +38,13 @@ export default {
         return {
             habilities: []
         }
+    },
+    methods: {
+      get_hab: function (hab) {
+        if (hab == "B") return "Bom"
+        else if (hab == "M") return "Mediano"
+        else return "Insuficiente"
+      }
     },
     beforeMount: function (){
         this.$http.get('https://home-andre.firebaseio.com/habilities.json')
