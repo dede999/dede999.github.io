@@ -54,19 +54,7 @@ export default {
         return {
             projects: []
         }
-    },
-    methods: {
-        
-    },
-    // beforeMount: function() {
-    //     this.$http.get('https://home-andre.firebaseio.com/projects.json')
-    //         .then(response => {
-    //             this.projects = response.data
-    //             console.log(response.data)
-    //         }).catch(e =>{
-    //             console.log("Olha o erro " + e)
-    //         })
-    // }
+    }
 }
 </script>
 

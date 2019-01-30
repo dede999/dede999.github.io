@@ -9,17 +9,17 @@
                 <table class="centered highlights">
                     <thead>
                         <tr>
-                            <th> Ferramentas </th>
+                            <th> Ferramentas / Paradigmas </th>
                             <th> Nível </th>
                             <th> Frameworks/Exemplos </th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="hab in habilities">
+                        <tr v-for="hab in habilities" :key="hab.language">
                             <td> {{ hab.language }} </td>
-                            <td> {{ hab.nivel }}</td>
+                            <td> {{ get_level(hab.nivel) }}</td>
                             <td> 
-                                <span v-for="f in hab.framework"> 
+                                <span v-for="f in hab.framework" :key="f"> 
                                     {{ f }} 
                                 </span>
                             </td>
@@ -37,6 +37,13 @@ export default {
     data() {
         return {
             habilities: []
+        }
+    },
+    methods: {
+        get_level : function (l) {
+            if (l === "B") return "Bom"
+            else if (l === "M") return "Mediano"
+            else return "Iniciante"
         }
     },
     beforeMount: function (){
