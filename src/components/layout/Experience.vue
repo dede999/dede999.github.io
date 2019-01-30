@@ -13,7 +13,7 @@
                             <i v-on:click="clear()"> Limpar seleção
                                 <i class="fas fa-broom"></i> </i>
                         </div>
-                        <div v-for="w in works" class="job" :key="w.title">
+                        <div v-for="w in works" class="job" :key="w">
                             <i v-on:click="pick(w)"> {{ w.title }} ({{ w.begin }} - {{ w.end }}) </i>
                         </div>
                     </div>

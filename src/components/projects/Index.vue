@@ -4,7 +4,7 @@
         <router-view></router-view>
         <h3> Projetos e Repositórios </h3>
         <div class="row">
-            <div v-for="p in projects" class="col s12 m6 l4" :key="p.name">
+            <div v-for="(p, key) in projects" class="col s12 m6 l4" :key="key">
                 <div class="card indigo z-depth-4 white-text">
                     <div class="card-content">
                         <span style="font-weight: bold" class="card-title"> {{ p.name }} </span>
@@ -51,6 +51,7 @@ export default {
         this.$http.get('https://home-andre.firebaseio.com/projects.json')
             .then(r => {
                 this.projects = r.data
+                // this.projects.sort((a, b) => a.first < b.first ? -1 : 1)
                 console.log(r.data)
             }).catch(e => {
                 console.log(e)
