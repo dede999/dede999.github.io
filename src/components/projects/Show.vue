@@ -2,10 +2,10 @@
     <id id="show">
         <div class="row z-depth-5 indigo darken-1">
             <h3> {{ project.name }} </h3>
-            <div v-for="t in project.tags" class="chip ligth-blue lighten-3">
+            <div v-for="t in project.tags" class="chip ligth-blue lighten-3" :key="t">
                 {{ show_tag(t) }}
             </div> <br>
-            <div v-for="t in project.tools" class="chip ligth-blue lighten-1">
+            <div v-for="t in project.tools" class="chip ligth-blue lighten-1" :key="t">
                 {{ t }}
             </div> <br>
             <div class="row white-text desc">

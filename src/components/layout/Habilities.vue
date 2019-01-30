@@ -15,11 +15,11 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="hab in habilities">
+                        <tr v-for="hab in habilities" :key="hab.language">
                             <td> {{ hab.language }} </td>
                             <td> {{ get_hab(hab.nivel) }}</td>
                             <td> 
-                                <span v-for="f in hab.framework"> 
+                                <span v-for="f in hab.framework" :key="f"> 
                                     {{ f }} 
                                 </span>
                             </td>

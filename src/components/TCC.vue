@@ -87,7 +87,7 @@
             <div id="fases" class="col s12" v-show="visible == 'fases'">
                 <div class="row fases">
                     <div class="col l3 m5 s6">
-                        <div class="phases orange lighten-2" v-for="(p, key) in fases">
+                        <div class="phases orange lighten-2" v-for="(p, key) in fases" :key="key">
                             <i v-bind:class=p.icon></i> 
                             <i v-on:click="get_phase(p, key)"> {{ p.name }} </i>
                         </div>
@@ -97,7 +97,7 @@
                             <h4 v-if="fase_id >= 0"> Fase {{ fase_id + 1 }}: {{ fase.name }} </h4>
                             <h5 v-if="fase.completed" class="chip green"> Completa </h5>
                             <h5 v-else-if="fase.icon" class="chip red"> Incompleta </h5>
-                            <p v-for="par in fase.paragraphs">
+                            <p v-for="par in fase.paragraphs" :key="par">
                                 {{ par }}
                             </p>
                         </div>
@@ -107,7 +107,7 @@
             <div id="fontes" class="col s12" style="padding-top: 7px" v-show="visible == 'fontes'">
                 <div class="row fases">
                     <div class="col l3 m5 s6">
-                        <div class="phases orange lighten-2" v-for="(f, key) in fontes">
+                        <div class="phases orange lighten-2" v-for="(f, key) in fontes" :key="key">
                             <i class="fas fa-book"></i> 
                             <i v-on:click="get_font(f, key)"> {{ f.titulo }} </i>
                         </div>
@@ -119,7 +119,7 @@
                                 <div class="col s6"> <h6> <b> Autor: </b> {{ fonte.autor }} </h6> </div>
                                 <div class="col s6"> <h6> <b> Editora: </b> {{ fonte.editora }} </h6></div>
                             </div>
-                            <p v-for="par in fonte.desc">
+                            <p v-for="par in fonte.desc" :key="par">
                                 {{ par }}
                             </p>
                             <p v-show="fonte.titulo"> Veja informações detalhadas <a v-bind:href="fonte.link"> <i class="fas fa-book"></i> </a> </p>

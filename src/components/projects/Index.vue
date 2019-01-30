@@ -4,7 +4,7 @@
         <router-view></router-view>
         <h3> Projetos e Repositórios </h3>
         <div class="row">
-            <div v-for="(p, key) in projects" class="col s12 m6 l4">
+            <div v-for="p in projects" class="col s12 m6 l4" :key="p.name">
                 <div class="card indigo z-depth-4 white-text">
                     <div class="card-content">
                         <span style="font-weight: bold" class="card-title"> {{ p.name }} </span>
