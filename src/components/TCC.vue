@@ -24,13 +24,13 @@
                         <p class="data"> Observação: A sessão de fontes receberá o devido cuidado quando as demais partes forem concluídas </p>
                         <div class="row" id="links">
                             <div class="col s6 m6 l6">
-                                <a href="#">
+                                <a v-bind:href="mono">
                                     Monografia
                                     <i class="fas fa-book"></i>
                                 </a>
                             </div>
                             <div class="col s6 m6 l6">
-                                <a href="#">
+                                <a :href="repo">
                                     Repositório
                                     <i class="fab fa-github"></i>
                                 </a>
@@ -145,6 +145,8 @@ export default {
     data() {
         return {
             visible: 'index',
+            mono: 'https://linux.ime.usp.br/~andreluizas/mac0499/monografia_template.pdf',
+            repo: 'https://github.com/dede999/InteractiveFiction',
             fase: [
                 {
                     name : "",

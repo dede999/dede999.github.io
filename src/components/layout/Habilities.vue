@@ -6,7 +6,7 @@
                     Ferramentas Conhecidas
                     <i class="fas fa-atom" style="font-size:40x"></i>
                 </h3>
-                <table class="centered highlights">
+                <table class="centered highlight">
                     <thead>
                         <tr>
                             <th> Ferramentas / Paradigmas </th>
@@ -43,7 +43,7 @@ export default {
         get_level : function (l) {
             if (l === "B") return "Bom"
             else if (l === "M") return "Mediano"
-            else return "Iniciante"
+            else return "Básico"
         }
     },
     beforeMount: function (){
